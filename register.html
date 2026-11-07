@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a Tasty Bites account to order food and track your orders.">
+  <title>Sign Up - Tasty Bites</title>
+
+  <!-- CSS order matters: base, then layout, then components -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/component.css">
+</head>
+<body>
+
+  <!-- ===== Header: ui.js fills #nav-menu and #nav-actions ===== -->
+  <header class="site-header">
+    <nav class="container navbar-inner" aria-label="Main navigation">
+      <a href="index.html" class="brand">🍔 Tasty Bites</a>
+      <div class="nav-menu" id="nav-menu"></div>
+      <div class="nav-actions" id="nav-actions"></div>
+      <button class="nav-toggle" id="nav-toggle" type="button"
+              aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <!-- ===== Main content ===== -->
+  <main class="site-main">
+    <div class="container auth-page">
+      <div class="auth-box card">
+        <div class="card-body">
+
+          <h1 class="text-center mb-1">Create your account</h1>
+          <p class="text-center text-muted mb-2">Sign up to order food and track your orders.</p>
+
+          <!-- auth.js shows server errors here (for example "Email already registered") -->
+          <div id="auth-alert" class="alert alert-error hidden" role="alert"></div>
+
+          <form id="register-form" class="form mt-2" novalidate>
+
+            <div class="form-group">
+              <label for="register-name" class="form-label">Full name</label>
+              <input type="text" id="register-name" name="name" class="form-control"
+                     placeholder="Your full name" autocomplete="name"
+                     maxlength="50" required>
+              <span id="register-name-error" class="form-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="register-email" class="form-label">Email</label>
+              <input type="email" id="register-email" name="email" class="form-control"
+                     placeholder="you@example.com" autocomplete="email"
+                     maxlength="254" required>
+              <span id="register-email-error" class="form-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="register-phone" class="form-label">Mobile number</label>
+              <input type="tel" id="register-phone" name="phone" class="form-control"
+                     placeholder="03001234567" autocomplete="tel"
+                     maxlength="20" inputmode="numeric" required>
+              <span id="register-phone-error" class="form-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="register-password" class="form-label">Password</label>
+              <input type="password" id="register-password" name="password" class="form-control"
+                     placeholder="At least 8 characters" autocomplete="new-password"
+                     maxlength="72" required>
+              <span class="form-hint">Use at least 8 characters, with a letter and a number.</span>
+              <span id="register-password-error" class="form-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="register-confirm" class="form-label">Confirm password</label>
+              <input type="password" id="register-confirm" name="confirm" class="form-control"
+                     placeholder="Repeat your password" autocomplete="new-password"
+                     maxlength="72" required>
+              <span id="register-confirm-error" class="form-error" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" id="register-submit" class="btn btn-block btn-lg">Create account</button>
+
+            <p class="form-link">
+              Already have an account? <a href="login.html">Log in</a>
+            </p>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <div class="container">&copy; 2026 Tasty Bites. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="text-center" style="padding: 16px;">Please enable JavaScript to sign up.</p>
+  </noscript>
+
+  <!-- auth.js handles the form. ui.js builds the navbar. -->
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/navbar.js"></script>
+</body>
+</html>

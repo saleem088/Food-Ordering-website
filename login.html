@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Log in to Tasty Bites to order food and track your orders.">
+  <title>Login - Tasty Bites</title>
+
+  <!-- CSS order matters: base, then layout, then components -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/component.css">
+</head>
+<body>
+
+  <!-- ===== Header: ui.js fills #nav-menu and #nav-actions ===== -->
+  <header class="site-header">
+    <nav class="container navbar-inner" aria-label="Main navigation">
+      <a href="index.html" class="brand">🍔 Tasty Bites</a>
+      <div class="nav-menu" id="nav-menu"></div>
+      <div class="nav-actions" id="nav-actions"></div>
+      <button class="nav-toggle" id="nav-toggle" type="button"
+              aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <!-- ===== Main content ===== -->
+  <main class="site-main">
+    <div class="container auth-page">
+      <div class="auth-box card">
+        <div class="card-body">
+
+          <h1 class="text-center mb-1">Welcome back</h1>
+          <p class="text-center text-muted mb-2">Log in to order food and track your orders.</p>
+
+          <!-- auth.js shows server errors here (for example "Invalid email or password") -->
+          <div id="auth-alert" class="alert alert-error hidden" role="alert"></div>
+
+          <form id="login-form" class="form mt-2" novalidate>
+
+            <div class="form-group">
+              <label for="login-email" class="form-label">Email</label>
+              <input type="email" id="login-email" name="email" class="form-control"
+                     placeholder="you@example.com" autocomplete="email"
+                     maxlength="254" required>
+              <span id="login-email-error" class="form-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="login-password" class="form-label">Password</label>
+              <input type="password" id="login-password" name="password" class="form-control"
+                     placeholder="Your password" autocomplete="current-password"
+                     maxlength="72" required>
+              <span id="login-password-error" class="form-error" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" id="login-submit" class="btn btn-block btn-lg">Log in</button>
+
+            <p class="form-link">
+              Don't have an account? <a href="register.html">Sign up</a>
+            </p>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <div class="container">&copy; 2026 Tasty Bites. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="text-center" style="padding: 16px;">Please enable JavaScript to log in.</p>
+  </noscript>
+
+  <!-- auth.js handles the form. ui.js builds the navbar and the session-expired notice. -->
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/navbar.js"></script>
+</body>
+</html>

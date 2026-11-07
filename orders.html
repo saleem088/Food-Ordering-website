@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your Tasty Bites orders and track their status.">
+  <title>My Orders - Tasty Bites</title>
+
+  <!-- CSS order matters: base, then layout, then components -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/component.css">
+</head>
+<body>
+
+  <!-- ===== Header: ui.js fills #nav-menu and #nav-actions ===== -->
+  <header class="site-header">
+    <nav class="container navbar-inner" aria-label="Main navigation">
+      <a href="index.html" class="brand">🍔 Tasty Bites</a>
+      <div class="nav-menu" id="nav-menu"></div>
+      <div class="nav-actions" id="nav-actions"></div>
+      <button class="nav-toggle" id="nav-toggle" type="button"
+              aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <!-- ===== Main content ===== -->
+  <main class="site-main">
+    <div class="container">
+
+      <div class="page-header row-between">
+        <div>
+          <h1>My Orders</h1>
+          <p>Track your orders. Status updates appear automatically.</p>
+        </div>
+        <button type="button" id="refresh-orders" class="btn btn-outline btn-sm">↻ Refresh</button>
+      </div>
+
+      <!-- orders.js draws loading, error, empty state and the order cards here -->
+      <div class="orders-list" id="orders-list" aria-live="polite">
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <p>Loading your orders...</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Tasty Bites</h4>
+        <p>Fresh food, delivered fast.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="orders.html">My Orders</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>support@tastybites.com</li>
+          <li>Abbottabad, Pakistan</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">&copy; 2026 Tasty Bites. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="text-center" style="padding: 16px;">Please enable JavaScript to view your orders.</p>
+  </noscript>
+
+  <!-- orders.js imports api, auth, ui and utils, and calls initNavbar() itself -->
+  <script type="module" src="js/orders.js"></script>
+</body>
+</html>

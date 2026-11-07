@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tasty Bites - order fresh food online and get it delivered fast.">
+  <title>Tasty Bites - Order Food Online</title>
+
+  <!-- CSS order matters: base, then layout, then components -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/component.css">
+</head>
+<body>
+
+  <!-- ===== Header: ui.js fills #nav-menu and #nav-actions ===== -->
+  <header class="site-header">
+    <nav class="container navbar-inner" aria-label="Main navigation">
+      <a href="index.html" class="brand">🍔 Tasty Bites</a>
+      <div class="nav-menu" id="nav-menu"></div>
+      <div class="nav-actions" id="nav-actions"></div>
+      <button class="nav-toggle" id="nav-toggle" type="button"
+              aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-copy">
+        <span class="hero-eyebrow">Good food, made easy</span>
+        <h1>Make room for something delicious.</h1>
+        <p>Find your next favorite, order in a few clicks, and enjoy freshly prepared food delivered to your door.</p>
+
+        <form class="hero-search" action="menu.html" method="get" role="search">
+          <label for="hero-search" class="sr-only">Search the menu</label>
+          <input type="search" id="hero-search" name="q" class="search-input"
+                 placeholder="What are you craving?" maxlength="60" autocomplete="off">
+          <button type="submit" class="btn btn-lg">Search menu</button>
+        </form>
+
+        <div class="hero-trust" aria-label="Ordering benefits">
+          <span>Freshly prepared</span>
+          <span>Simple checkout</span>
+          <span>Order tracking</span>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-plate">🍔</div>
+        <div class="hero-art-note">
+          <strong>A little joy,</strong>
+          delivered fresh
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Main content ===== -->
+  <main class="site-main">
+
+    <!-- Why choose us -->
+    <section class="section">
+      <div class="container">
+        <span class="section-eyebrow">The Tasty Bites difference</span>
+        <h2 class="section-title">Good food. No guesswork.</h2>
+        <p class="section-subtitle">Everything you need for an easy, dependable meal from browsing through delivery.</p>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">🚀</span>
+            <h3>Made fresh to order</h3>
+            <p class="text-muted">Choose from a menu of favorites prepared when you order.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">🥗</span>
+            <h3>Something for everyone</h3>
+            <p class="text-muted">Explore burgers, pizza, sides, desserts and refreshing drinks.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">📱</span>
+            <h3>Easy online ordering</h3>
+            <p class="text-muted">Search, add your picks to the cart and check out with confidence.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">📍</span>
+            <h3>Stay in the know</h3>
+            <p class="text-muted">Check your order history and follow updates from preparation to delivery.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">How it works</h2>
+        <p class="section-subtitle">Three simple steps to a great meal.</p>
+
+        <div class="grid grid-3">
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">1️⃣</span>
+            <h3>Choose your food</h3>
+            <p class="text-muted">Browse the menu, filter by category or search for a dish.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">2️⃣</span>
+            <h3>Place your order</h3>
+            <p class="text-muted">Add items to the cart, enter your address and confirm.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">3️⃣</span>
+            <h3>Enjoy your meal</h3>
+            <p class="text-muted">Track the status and enjoy your food when it arrives.</p>
+          </article>
+        </div>
+
+        <div class="text-center mt-3">
+          <a href="menu.html" class="btn btn-lg">Start your order</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Tasty Bites</h4>
+        <p>Fresh food, delivered fast.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="orders.html">My Orders</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>support@tastybites.com</li>
+          <li>Abbottabad, Pakistan</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">&copy; 2026 Tasty Bites. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="text-center" style="padding: 16px;">Please enable JavaScript to use Tasty Bites.</p>
+  </noscript>
+
+  <script type="module" src="js/navbar.js"></script>
+</body>
+</html>

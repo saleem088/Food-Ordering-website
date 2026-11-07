@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse the Tasty Bites menu. Search and filter by category, then add your favorites to the cart.">
+  <title>Menu - Tasty Bites</title>
+
+  <!-- CSS order matters: base, then layout, then components -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/component.css">
+</head>
+<body>
+
+  <!-- ===== Header: ui.js fills #nav-menu and #nav-actions ===== -->
+  <header class="site-header">
+    <nav class="container navbar-inner" aria-label="Main navigation">
+      <a href="index.html" class="brand">🍔 Tasty Bites</a>
+      <div class="nav-menu" id="nav-menu"></div>
+      <div class="nav-actions" id="nav-actions"></div>
+      <button class="nav-toggle" id="nav-toggle" type="button"
+              aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <!-- ===== Main content ===== -->
+  <main class="site-main">
+    <div class="container">
+
+      <div class="page-header">
+        <span class="section-eyebrow">Something delicious awaits</span>
+        <h1>Our Menu</h1>
+        <p>Explore the menu, find what you’re craving and add a favorite to your cart.</p>
+      </div>
+
+      <!-- Search box and category chips (menu.js fills the chips) -->
+      <div class="toolbar">
+        <div class="toolbar-search">
+          <label for="menu-search" class="sr-only">Search the menu</label>
+          <input type="search" id="menu-search" class="search-input"
+                 placeholder="Search burgers, pizza, drinks..."
+                 maxlength="60" autocomplete="off">
+        </div>
+        <div class="category-filters" id="category-filters" aria-label="Filter by category"></div>
+      </div>
+
+      <!-- "6 items found" -->
+      <p id="menu-status" class="text-muted mb-2" aria-live="polite"></p>
+
+      <!-- Food cards, loading, error and empty states are drawn here by menu.js -->
+      <div class="menu-grid" id="menu-grid">
+        <div class="loading-state" style="grid-column: 1 / -1;">
+          <div class="spinner"></div>
+          <p>Loading menu...</p>
+        </div>
+      </div>
+
+      <p class="photo-credit">
+        Food photography via <a href="https://www.themealdb.com/" target="_blank" rel="noopener noreferrer">TheMealDB</a>
+        and <a href="https://unsplash.com/" target="_blank" rel="noopener noreferrer">Unsplash</a>.
+      </p>
+
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Tasty Bites</h4>
+        <p>Fresh food, delivered fast.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="orders.html">My Orders</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>support@tastybites.com</li>
+          <li>Abbottabad, Pakistan</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">&copy; 2026 Tasty Bites. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="text-center" style="padding: 16px;">Please enable JavaScript to view the menu.</p>
+  </noscript>
+
+  <!-- menu.js imports api, cart, ui and utils, and calls initNavbar() itself -->
+  <script type="module" src="js/menu.js"></script>
+</body>
+</html>

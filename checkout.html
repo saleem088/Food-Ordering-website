@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Enter your delivery details and place your Tasty Bites order.">
+  <title>Checkout - Tasty Bites</title>
+
+  <!-- CSS order matters: base, then layout, then components -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/component.css">
+</head>
+<body>
+
+  <!-- ===== Header: ui.js fills #nav-menu and #nav-actions ===== -->
+  <header class="site-header">
+    <nav class="container navbar-inner" aria-label="Main navigation">
+      <a href="index.html" class="brand">🍔 Tasty Bites</a>
+      <div class="nav-menu" id="nav-menu"></div>
+      <div class="nav-actions" id="nav-actions"></div>
+      <button class="nav-toggle" id="nav-toggle" type="button"
+              aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <!-- ===== Main content ===== -->
+  <main class="site-main">
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Checkout</h1>
+        <p>Enter your delivery details and confirm your order.</p>
+      </div>
+
+      <!-- Shown by checkout.js when the cart is empty -->
+      <div id="checkout-empty" class="hidden"></div>
+
+      <!-- Alerts: sold-out items, price changes, server errors -->
+      <div id="checkout-alert" class="alert hidden" role="alert"></div>
+
+      <div id="checkout-content" class="checkout-layout mt-2">
+
+        <!-- ===== Left: delivery details ===== -->
+        <form id="checkout-form" class="card" novalidate>
+          <div class="card-header">Delivery details</div>
+          <div class="card-body form">
+
+            <div class="form-group">
+              <label for="checkout-address" class="form-label">Delivery address</label>
+              <textarea id="checkout-address" name="address" class="form-control"
+                        rows="3" maxlength="200" autocomplete="street-address"
+                        placeholder="House number, street, area, city" required></textarea>
+              <span id="address-error" class="form-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="checkout-phone" class="form-label">Mobile number</label>
+              <input type="tel" id="checkout-phone" name="phone" class="form-control"
+                     placeholder="03001234567" autocomplete="tel"
+                     maxlength="20" inputmode="numeric" required>
+              <span id="phone-error" class="form-error" aria-live="polite"></span>
+            </div>
+
+            <fieldset class="form-group" style="border: none; padding: 0;">
+              <legend class="form-label">Payment method</legend>
+              <div id="payment-options" class="option-list"></div>
+              <span id="payment-hint" class="form-hint hidden"></span>
+              <span id="payment-error" class="form-error" aria-live="polite"></span>
+            </fieldset>
+
+            <div class="form-group">
+              <label for="checkout-notes" class="form-label">Order notes (optional)</label>
+              <textarea id="checkout-notes" name="notes" class="form-control"
+                        rows="2" maxlength="200"
+                        placeholder="For example: no onions, ring the bell"></textarea>
+              <span id="notes-error" class="form-error" aria-live="polite"></span>
+            </div>
+
+          </div>
+        </form>
+
+        <!-- ===== Right: order summary ===== -->
+        <aside class="summary-panel card">
+          <div class="card-header">Order summary</div>
+          <div class="card-body">
+
+            <ul id="summary-items"></ul>
+
+            <hr style="border: none; border-top: 1px solid var(--border); margin: 12px 0;">
+
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="summary-subtotal">Rs. 0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Delivery</span>
+              <span id="summary-delivery">Rs. 0.00</span>
+            </div>
+            <p id="delivery-note" class="form-hint hidden"></p>
+
+            <div class="summary-total">
+              <span>Total</span>
+              <span id="summary-total">Rs. 0.00</span>
+            </div>
+
+            <!-- Outside the form, so it uses the form attribute to submit it -->
+            <button type="submit" form="checkout-form" id="place-order-btn"
+                    class="btn btn-block btn-lg mt-2">Place order</button>
+
+            <p class="form-link mt-1"><a href="cart.html">← Back to cart</a></p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <div class="container">&copy; 2026 Tasty Bites. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="text-center" style="padding: 16px;">Please enable JavaScript to check out.</p>
+  </noscript>
+
+  <!-- checkout.js imports api, cart, auth, ui and utils, and calls initNavbar() itself -->
+  <script type="module" src="js/checkout.js"></script>
+</body>
+</html>
